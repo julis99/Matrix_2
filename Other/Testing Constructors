@@ -1,0 +1,36 @@
+
+--COMPLEX MATRIX--
+mtx = Matrix(3, 3, True)
+mtx.changeElement(0, 0, Complex(1, 1))
+mtx.changeElement(0, 1, Complex(2, 0))
+mtx.changeElement(0, 2, Complex(5, -2))
+mtx.changeElement(1, 0, Complex(0, 1))
+mtx.changeElement(1, 1, Complex(0, 0))
+mtx.changeElement(1, 2, Complex(0, -2))
+mtx.changeElement(2, 0, Complex(0.1, 1))
+mtx.changeElement(2, 1, Complex(0, -0.3))
+mtx.changeElement(2, 2, Complex(1, 2.3))
+
+--FLOAT MATRIX--
+mtx = Matrix(3, 3)
+mtx.changeElement(0, 0, 1)
+mtx.changeElement(0, 1, 2)
+mtx.changeElement(0, 2, -2)
+mtx.changeElement(1, 0, 0.4)
+mtx.changeElement(1, 1, -0.3)
+mtx.changeElement(1, 2, 2.7)
+mtx.changeElement(2, 0, 4)
+mtx.changeElement(2, 1, 5)
+mtx.changeElement(2, 2, 14)
+
+--FLOAT VECTOR--
+vct = Vector(3)
+vct.changeElement(0, 1)
+vct.changeElement(1, 2.7)
+vct.changeElement(2, -2)
+
+--COMPLEX VECTOR--
+vct = Vector(3, True)
+vct.changeElement(0, Complex(0, 12))
+vct.changeElement(1, Complex(0.1, -0.3))
+vct.changeElement(2, Complex(2, 5))
