@@ -13,7 +13,7 @@ from BasicOperation.complex.CPX_input import COMPLEX_getInput as CPX_getInput
 from Other.input import *
 from Other.CommonPrints import *
 from Other.WRAPPER import MtxAnalyticsAndEditor, ModulusElMtxMult, VctCalculations
-from Other.ConsoleClearer import ConsoleClear as CS_clear
+
 
 import time as STD_time
 
@@ -79,7 +79,7 @@ def printHeader():
     print(r"              \\\\\ VERSION 2.4.3 /////")
     for i in range(3):
         print(fullHashLine())
-    CS_clear(1)
+    STD_time.sleep(1)
 
 def printMatrixOptions(isComplex: bool):
     print(fullHashLine())
