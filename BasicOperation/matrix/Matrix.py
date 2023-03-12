@@ -58,7 +58,7 @@ class Matrix:
         oTmp = MTX_typeCompatibilizor(other, self.isComplex())
         for idxR in range(self.rows):
             for idxC in range(other.getCols()):
-                if self.isComplex():
+                if self.isComplex() or other.isComplex:
                     vl = Complex(0, 0)
                 else:
                     vl = 0
@@ -148,6 +148,12 @@ class MatrixSize:
     def __eq__(self, other):
         return self.rows == other.rows and self.cols == other.cols
 
+    def getRows(self) -> int:
+        return self.rows
+
+    def getCols(self) -> int:
+        return self.cols
+
 def MTX_typeCompatibilizor(A: Matrix, makeCpx: bool):
     if makeCpx:
         return MTX_makeComplex(A)
@@ -166,6 +172,5 @@ def MTX_makeComplex(A: Matrix) -> Matrix:
             for idxC in range(aSize["#cols"]):
                 rtn.changeElement(idxR, idxC, Complex(A.getValue(idxR, idxC), 0))
         return rtn
-
 
 

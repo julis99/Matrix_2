@@ -6,7 +6,7 @@ import BasicOperation.complex.CPX_input as complex
 
 def VECTOR_getInput(complexity: int=0, size:int = 0) -> Vector:
     """Forces user to Create a Vector
-    :parameter complexity (1: asks whether Complex; 2: forces complex; anything else will force non-complex"""
+    :parameter complexity: 1: asks whether Complex; 2: forces complex; anything else will force non-complex"""
     if size == 0:
         size = INT_getBiggerInput(min=1, msg="Enter Length of Vector: ")
     if complexity == 1:

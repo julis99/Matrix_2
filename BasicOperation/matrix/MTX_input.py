@@ -6,12 +6,11 @@ from Other.Exceptions import *
 import random
 
 def MATRIX_getInput(complexity: int=0, rows:int = 0, cols:int = 0) -> Matrix:
-    """Forces user to Create a Vector
-    :parameter complexity (1: asks whether Complex; 2: forces complex; anything else will force non-complex"""
+    """Forces user to Create a Matrix
+    :param complexity : 1: asks whether Complex; 2: forces complex; anything else will force non-complex"""
     if rows == 0:
         rows = INT_getBiggerInput(2, "Enter Number of rows: ")
     if cols == 0:
-        print("Enter Number of colums: ")
         cols = INT_getBiggerInput(2, "Enter Number of columns: ")
     if complexity == 1:
         makeComplex = BOOL_getInput(msg="With Complex numbers? (y/n)")

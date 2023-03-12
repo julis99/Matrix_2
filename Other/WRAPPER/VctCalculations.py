@@ -40,7 +40,7 @@ def VCT_CALC(vct: Vector, ch: Cache = None) -> Vector | Matrix:
                     useCache = False
                 if useCache:
                     fltrd = FilteredVectorCache(unfiltered=ch, lng=len(vct))
-                    if fltrd.containsZeroVectors():
+                    if fltrd.containsNoVectors():
                         print("Cache contains no fitting Vectors\nCreate a new One")
                     else:
                         other = fltrd.chooseVector()
@@ -68,7 +68,7 @@ def VCT_CALC(vct: Vector, ch: Cache = None) -> Vector | Matrix:
                     useCache = False
                 if useCache:
                     fltrd = FilteredVectorCache(unfiltered=ch, lng=len(vct))
-                    if fltrd.containsZeroVectors():
+                    if fltrd.containsNoVectors():
                         print("Cache contains no fitting Vectors\nCreate a new One")
                     else:
                         other = fltrd.chooseVector()
@@ -86,7 +86,7 @@ def VCT_CALC(vct: Vector, ch: Cache = None) -> Vector | Matrix:
                     useCache = False
                 if useCache:
                     fltrd = FilteredVectorCache(unfiltered=ch, lng=len(vct))
-                    if fltrd.containsZeroMatrixs():
+                    if fltrd.containsNoMatrixs():
                         print("Cache contains no fitting Matrixes\nCreate a new One")
                     else:
                         mtx = fltrd.chooseMatrix()

@@ -12,7 +12,7 @@ from BasicOperation.complex.CPX_input import COMPLEX_getInput as CPX_getInput
 
 from Other.input import *
 from Other.CommonPrints import *
-from Other.WRAPPER import MtxAnalyticsAndEditor, ModulusElMtxMult, VctCalculations
+from Other.WRAPPER import MtxAnalyticsAndEditor, ModulusElMtxMult, VctCalculations, MtxCalculations
 
 
 import time as STD_time
@@ -35,6 +35,8 @@ def MAIN():
                     itm = ch.chooseElement()
                 case 0:
                     itm = MtxAnalyticsAndEditor.Analytics_n_Editor(itm)
+                case 1:
+                    itm = MtxCa
         if isinstance(itm, Vector):
             ch.appendVector(vct=itm)
             printVectorOptions(itm.isComplex())
