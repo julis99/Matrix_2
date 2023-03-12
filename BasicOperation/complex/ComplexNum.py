@@ -15,11 +15,15 @@ class ComplexNum:
         return self.imaginary
 
     def __add__(self, other):
+        if isinstance(other, float | int):
+            other = ComplexNum(other, 0)
         rRtn = self.real + other.getReal()
         iRtn = self.imaginary + other.getImag()
         return ComplexNum(rRtn, iRtn)
 
     def __mul__(self, other):
+        if isinstance(other, float | int):
+            other = ComplexNum(other, 0)
         r1 = self.real
         r2 = other.getReal()
         i1 = self.imaginary
@@ -42,6 +46,7 @@ class ComplexNum:
         return self.imaginary == 0
 
 
+
 def conjugate(num: ComplexNum | int | float) -> ComplexNum | int | float:
     if isinstance(num, ComplexNum):
         return ComplexNum(real=num.getReal(), imag=-1 * num.getImag())
@@ -56,3 +61,14 @@ def ComplexAdapter(num: float | int | ComplexNum, adapt: bool):
         return ComplexNum(num, 0)
     else:
         return num
+
+def ComplexReducer(num: ComplexNum, force:bool = False) -> ComplexNum | float:
+    if force and isinstance(num, ComplexNum):
+        return num.getReal()
+    if isinstance(num, float | int):
+        return num
+    elif isinstance(num, ComplexNum):
+        if num.hasZeroImaginary():
+            return num.getReal()
+        else:
+            return num

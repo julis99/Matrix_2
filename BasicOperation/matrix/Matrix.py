@@ -1,4 +1,4 @@
-from BasicOperation.complex.ComplexNum import ComplexNum as Complex, conjugate
+from BasicOperation.complex.ComplexNum import ComplexNum as Complex, conjugate, ComplexReducer, ComplexAdapter
 from Other.StringCreator import *
 
 from Other.Exceptions import *
@@ -94,10 +94,10 @@ class Matrix:
         return self.values[row][col]
 
     def changeElement(self, row: int, col: int, newValue):
-        if isinstance(newValue, Complex) and self.isCpx:
-            self.values[row][col] = newValue
-        elif (isinstance(newValue, float) or isinstance(newValue, int)) and not self.isCpx:
-            self.values[row][col] = newValue
+        if self.isCpx:
+            self.values[row][col] = ComplexAdapter(newValue, adapt=True)
+        elif not self.isCpx:
+            self.values[row][col] = ComplexReducer(newValue, force=True)
         else:
             raise WrongTypeException
 

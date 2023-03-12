@@ -36,7 +36,9 @@ def MAIN():
                 case 0:
                     itm = MtxAnalyticsAndEditor.Analytics_n_Editor(itm)
                 case 1:
-                    itm = MtxCa
+                    itm = MtxCalculations.MTX_CALC(itm, ch)
+                case 2:
+                    itm = ModulusElMtxMult.MOD_EMM_main(itm)
         if isinstance(itm, Vector):
             ch.appendVector(vct=itm)
             printVectorOptions(itm.isComplex())
