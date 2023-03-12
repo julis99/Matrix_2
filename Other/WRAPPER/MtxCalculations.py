@@ -3,6 +3,8 @@ from BasicOperation.vector.VCT_input import VECTOR_getInput as VCT_getInput
 
 from BasicOperation.matrix.Matrix import Matrix, MatrixSize
 from BasicOperation.matrix.MTX_input import MATRIX_getInput as MTX_getInput
+from AdvancedOperation.adv_mtx.ADV_MTX_Calc import *
+from AdvancedOperation.adv_mtx.MTX_Analytics import *
 
 from BasicOperation.complex.CPX_input import COMPLEX_getInput as CPX_getInput
 from BasicOperation.mixedCalc import *
@@ -112,6 +114,23 @@ def MTX_CALC(mtx: Matrix, ch: Cache = None) -> Vector | Matrix:
                 vct = MTX_VCT_Multiplication(mtx, vct)
                 print(f"Returning {vct}")
                 return vct
+            case 6:
+                try:
+                    det = determinant(mtx)
+                    print(f"The determinant of the given Matrix is {det}")
+                except NotYetImplementedException:
+                    print("The Feature is not yet implemented...\n   Visit MatrixCalc.org for help")
+                print(fullHashLine())
+            case 7:
+                if mtx.isComplex():
+                    adj = BOOL_getInput(msg="Adjungate? (y/n)")
+                else:
+                    adj = False
+                if adj:
+                    mtx = mtx.adjungate()
+                else:
+                    mtx = mtx.transpose()
+
 
 def chooseOptions(mtx: Matrix) -> int:
     print(f"The following Matrix is given:\n{mtx}")
@@ -123,8 +142,9 @@ def chooseOptions(mtx: Matrix) -> int:
     print(" 3: Left Multiplication (other * given)")
     print(" 4: Right Multiplication (given * other)")
     print(" 5: Matrix-Vector-Multiplication")
-    print(" 6: Transpose / Adjungate")
-    return FLOAT_getRangedInput(-1, 6, forceInt=True)
+    print(" 6: Show Determinant")
+    print(" 7: Transpose / Adjungate")
+    return FLOAT_getRangedInput(-1, 7, forceInt=True)
 
 
 if __name__ == "__main__":

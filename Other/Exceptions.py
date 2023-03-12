@@ -9,3 +9,6 @@ class NotValidInputException(Exception):
 
 class CacheEmptyException(Exception):
     pass
+
+class NotYetImplementedException(Exception):
+    pass
