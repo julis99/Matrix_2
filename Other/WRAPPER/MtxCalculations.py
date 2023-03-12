@@ -115,11 +115,14 @@ def MTX_CALC(mtx: Matrix, ch: Cache = None) -> Vector | Matrix:
                 print(f"Returning {vct}")
                 return vct
             case 6:
-                try:
-                    det = determinant(mtx)
-                    print(f"The determinant of the given Matrix is {det}")
-                except NotYetImplementedException:
-                    print("The Feature is not yet implemented...\n   Visit MatrixCalc.org for help")
+                if not isSquareMatrix(mtx):
+                    print("Not Posibble for Non Square Matrix's")
+                else:
+                    try:
+                        det = determinant(mtx)
+                        print(f"The determinant of the given Matrix is {det}")
+                    except NotYetImplementedException:
+                        print("The Feature is not yet implemented...\n   Visit MatrixCalc.org for help")
                 print(fullHashLine())
             case 7:
                 if mtx.isComplex():

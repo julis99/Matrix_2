@@ -6,19 +6,7 @@ from BasicOperation.mixedCalc import *
 from Other.Exceptions import *
 
 def determinant(mtx: Matrix) -> Complex | float | int:
-    if not isSquareMatrix(mtx):
-        raise NotCompatibleException
-    if mtx.isComplex():
-        rtn = Complex(1, 0)
-    else:
-        rtn = 1
-    if isInLowerTriangularForm(mtx) or isInUpperTriangularForm(mtx):
-        diag = getDiagonalEntries(mtx)
-        for vl in diag:
-            rtn *= vl
-        return rtn
-    else:
-        raise NotYetImplementedException
+    raise NotYetImplementedException
 
 
 
