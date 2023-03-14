@@ -22,7 +22,7 @@ def MOD_EMM_main(mtx: Matrix = None, mod: int = 0) -> Matrix:
     mtx = MTX_redToInt(mtx)
     if not int:
         mod = INT_getInput(forceInt=True, unsigned=True)
-    while mod%2 == 0:
+    while mod % 2 == 0:
         print("Modulus has to be odd")
         mod = INT_getInput(forceInt=True, unsigned=True)
     mtx %= mod
