@@ -103,4 +103,5 @@ def printVectorOptions(isComplex: bool):
     print(" 0: Vector Analytics and Matrix Editor")
     print(" 1: Vector Calculations (has Access to Cache)")
 
-MAIN()
+if __name__ == "__main__":
+    MAIN()
